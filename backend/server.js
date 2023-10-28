@@ -3,6 +3,7 @@ const express = require('express')
 // using "require" to import needed modules is the CommonJS syntax whereas using "import {} from './.. path' " is the ES6 syntax
 const dotenv = require('dotenv').config() // this allows us to have a .env file with our variables in it
 const port = process.env.PORT || 8000
+const { customErrorHandler } = require('../backend/middlewares/errorMiddlewares')
 
 const app = express()
 
@@ -22,6 +23,9 @@ app.use(express.urlencoded({extended : false})); // for form url encoded data
 
 app.use('/api/goals', require('./routes/goalRoutes'))
 // this redirects to our routes page when endpoint /api/goals is hit
+
+app.use(customErrorHandler)
+// this will override the default error handler of express
 
 app.listen(port, ()=> {
     console.log(`server started on port ${port}...`);
