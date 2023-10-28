@@ -15,6 +15,11 @@ const app = express()
 //     // =================================================================
 // })
 
+
+// we need to add some middleware lines to access the data passed in the body of the api call
+app.use(express.json()); // for raw json data as body (the raw option in postman)
+app.use(express.urlencoded({extended : false})); // for form url encoded data
+
 app.use('/api/goals', require('./routes/goalRoutes'))
 // this redirects to our routes page when endpoint /api/goals is hit
 

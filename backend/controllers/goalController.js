@@ -16,6 +16,15 @@ const getGoal = (req, res)=>{
 // @route   : POST /api/goals 
 // @access  : Private
 const createGoal = (req, res)=>{
+    console.log("Body :", req.body);
+    if(!req.body.text){
+        // // status 400 is a bad request, i.e. when there is a client error and params aren't sent correctly or are missing
+        // res.status(400).json({message : 'Bad request! Please send a Text Field value.'});
+
+        // Doing the above using Express Error Handler
+        res.status(400)
+        throw new Error('Bad request! Please send a Text Field value!');
+    }
     res.status(200).json({message : "Created goal!"});
 }
 
