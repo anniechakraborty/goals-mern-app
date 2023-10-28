@@ -9,17 +9,17 @@ Goals App is a simple full stack application with authentication that allows use
 `"main": "server.js"`
 
 - Installed the following dependencies
-`npm i express dotenv mongoose colors express-async-handler`
-dotenv : provides access to the environment variables in .env file
-mongoose : provides a quick efficient layer to manage database operations
-colors : renders the terminal text in different colors
+`npm i express dotenv mongoose colors express-async-handler`/
+dotenv : provides access to the environment variables in .env file/
+mongoose : provides a quick efficient layer to manage database operations/
+colors : renders the terminal text in different colors/
 express-async-handler : makes it easier to write async-await operations like api calls by 
 
 - Installed the following dev dependencies
-`npm i -D nodemon`
+`npm i -D nodemon`/
 nodemon : constantly watches the server.js (my entry point to express server) for any code changes. so my changes are rendered immediately without having to restart the server
 
-- Updated `scripts` with the followwing dictionary
+- Updated `scripts` with the followwing dictionary/
 `"scripts": {
     "start": "node backend/server",
     "server": "nodemon backend/server"
