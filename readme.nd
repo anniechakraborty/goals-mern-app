@@ -1,0 +1,15 @@
+# Goals App
+
+## Things I had to do first to set up the project 
+- Ran npm init to initialise a packages.json file
+- Set the "main" property in packages.json as "server.js" as that file is the entry point for the server
+`"main": "server.js",`
+- Installed the following dependencies
+`npm i express dotenv mongoose colors`
+- Installed the following dev dependencies
+`npm i -D nodemon`
+- Updated `scripts` with the followwing dictionary
+`"scripts": {
+    "start": "node backend/server",
+    "server": "nodemon backend/server"
+},`
