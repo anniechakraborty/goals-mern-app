@@ -2,8 +2,12 @@
 const express = require('express')
 // using "require" to import needed modules is the CommonJS syntax whereas using "import {} from './.. path' " is the ES6 syntax
 const dotenv = require('dotenv').config() // this allows us to have a .env file with our variables in it
+const colors = require('colors')
 const port = process.env.PORT || 8000
 const { customErrorHandler } = require('../backend/middlewares/errorMiddlewares')
+const { connectDB } = require('../backend/config/db')
+
+connectDB()
 
 const app = express()
 
